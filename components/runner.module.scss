@@ -1,7 +1,3 @@
-.world {
-  // --cadence: 170;
-}
-
 $color: rgb(240, 240, 240);
 $stick-color: hsl(0, 0, 20);
 $speed: 4; // 4.00 min / 1km @todo
@@ -20,6 +16,8 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
 // World 
 .world {
   position: relative;
+  display: flex;
+  justify-content: center;
   width: 100%;
   margin: 0 auto;
   height: 200px;
@@ -73,8 +71,7 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
     animation: elem 22.4s linear infinite 1.6s;
   }
 }
-
-    
+  
 // Floor & grass
 .floor {
   width: 100%;
@@ -162,8 +159,7 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
     }
   }
 }
-  
- 
+
 // Cloud 
 .cloud {
   height: 20px;
@@ -209,10 +205,8 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
 }
 
 
-  
-
 // Stickman
-.stick {
+.man {
   width: 6px;
   height: 25px;
   bottom: 30px;
@@ -220,6 +214,7 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   background: $stick-color;
   border-radius: 3px;
   animation: stick 3s ease-in-out infinite;
+  transform: translateX(0px) rotate(0.02turn);
 
   div {
     background: $stick-color;
@@ -270,36 +265,39 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
 
 
   // Stickman arms/legs animations
-  .arm.left {
-    animation: run $manspeed_1 linear infinite;
+  .arm {
+    &.left {
+      animation: run $manspeed_1 linear infinite;
+  
+      .bottom {
+        animation: arm-bottom $manspeed_2 linear infinite
+      }
+    }
 
-    .bottom {
-      animation: arm-bottom $manspeed_2 linear infinite
+    &.right {
+      animation: run $manspeed_1 linear infinite $manspeed_2;
+  
+      .bottom {
+        animation: arm-bottom $manspeed_2 linear infinite $manspeed_1;
+      }
     }
   }
 
-  .arm.right {
-    animation: run $manspeed_1 linear infinite $manspeed_2;
+  .leg {
+    &.left {
+      animation: run $manspeed_1 linear infinite;
 
-    .bottom {
-      animation: arm-bottom $manspeed_2 linear infinite $manspeed_1;
+      .bottom {
+        animation: leg-bottom $manspeed_1 linear infinite;
+      }
     }
-      
-  }
 
-  .leg.left {
-    animation: run $manspeed_1 linear infinite;
+    &.right {
+      animation: run $manspeed_1 linear infinite $manspeed_2;
 
-    .bottom {
-      animation: leg-bottom $manspeed_1 linear infinite;
-    }
-  }
-
-  .leg.right {
-    animation: run $manspeed_1 linear infinite $manspeed_2;
-
-    .bottom {
-      animation: leg-bottom $manspeed_1 linear infinite $manspeed_2;
+      .bottom {
+        animation: leg-bottom $manspeed_1 linear infinite $manspeed_2;
+      }
     }
   }
 }
@@ -329,11 +327,11 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   0%, 100% {
     transform: translateX(0px) rotate(0.02turn);
   }
-  30% {
-    transform: translateX(0px) rotate(0.02turn);
-  }
-  70% {
+  50% {
     transform: translateX(10px) rotate(0.02turn);
+  }
+  75% {
+    transform: translateX(0px) rotate(0.02turn);
   }
 }
 
