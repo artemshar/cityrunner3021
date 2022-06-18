@@ -23,8 +23,9 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   height: 200px;
   top: 50%;
   overflow: hidden;
-  box-shadow: 0 16px 10px -10px #f4f0ff;
-
+  box-shadow: 0px -4px 10px 10px #68AADC;
+  background-color: #68AADC;
+  
   div {
     position: absolute;
     box-sizing: border-box;
@@ -44,25 +45,25 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
 .back {
   bottom: 0;
   right: -200px;
-  background: darken($color, 5%);
-  
+  background: rgb(34,193,195);
+  background: linear-gradient(5deg, rgba(34,193,195,0.8) 0%, rgba(253,187,45,0.6) 100%);
   
   &.one {
-    width: 200px;
-    height: 15%;
+    width: 70px;
+    height: 55%;
     animation: elem 20.8s linear infinite;
   }
 
   &.two {
-    width: 20px;
-    height: 16%;
-    animation: elem 26.4s linear infinite 4s;
+    width: 60px;
+    height: 46%;
+    animation: elem 26.4s linear infinite 10s;
   }
 
   &.three {
     width: 20px;
     height: 44%;
-    animation: elem 17.6s linear infinite 4s;
+    animation: elem 17.6s linear infinite 5s;
   }
   
   &.four {
@@ -81,23 +82,23 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   .rock {
     bottom: 0;
     right: -20px;
-    background: $stick-color;
+    background: #0c8f1b;
 
     &.one {
-      width: 16px;
-      height: 26px;
+      width: 1px;
+      height: 6px;
       animation: elem 18s linear infinite;
     }
 
     &.two {
-      width: 20px;
-      height: 18px;
+      width: 2px;
+      height: 8px;
       animation: elem 18s linear infinite 3s;
     }
 
     &.three  {
-      width: 13px;
-      height: 6px;
+      width: 3px;
+      height: 2px;
       animation: elem 16s linear infinite 2.6s;
     }
   }
@@ -106,7 +107,7 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
     width: 2px;
     bottom: 0;
     right: -2px;
-    background: $stick-color;
+    background: #07a41a;
 
     &.one {
       height: 15px;
@@ -164,11 +165,12 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
 .cloud {
   height: 20px;
   right: -160px;
-  background: rgba(206, 206, 206, 0.3);
+  background: rgba(246, 245, 255, 0.9);
+  border-radius: 15px;
 
   &::before,
   &::after {
-    background: hsla(0, 0, 100, 0.3) !important;
+    background: rgba(159, 205, 255, 0.7);
   }
 
   &::before {
@@ -188,19 +190,19 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   &.one {
     width: 100px;
     top: 60px;
-    animation: cloud 18s linear infinite;
+    animation: cloud 28s linear infinite;
   }
 
   &.two {
     width: 80px;
     top: 20px;
-    animation: cloud 25.6s linear infinite 2.4s;
+    animation: cloud 15.6s linear infinite 4s;
   }
 
   &.three {
     width: 40px;
     top: 10px;
-    animation: cloud 19.2s linear infinite 5s;
+    animation: cloud 19.2s linear infinite 10s;
   }
 }
 
@@ -308,7 +310,7 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-100vw - 200%));
+    transform: translateX(calc(-110vw - 200%));
   }
 }
 
@@ -318,7 +320,7 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-110vw - 200%));
+    transform: translateX(calc(-130vw - 200%));
   }
 }
 

@@ -6,7 +6,7 @@ export default function CadenceControls({ cadence, updateCadence }) {
 
   return (
     <div className={styles.cadenceControls}>
-      <div className={styles.cadenceControls__value}>{cadence}</div>
+      <div className={styles.cadenceControls__value}>{cadence} BPM</div>
       <div className={styles.cadenceControls__range}>
         <span className={styles.cadenceControls__rangeMin}>{minRangeValue}</span>
         <span className={styles.cadenceControls__rangeMax}>{maxRangeValue}</span>

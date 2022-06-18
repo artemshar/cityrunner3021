@@ -6,11 +6,15 @@
   flex-direction: column;
   height: 100px;
   width: 200px;
-  margin: 10px auto;
+  margin: -100px auto;
+  z-index: 10;
+  position: relative;
 
   &__value {
-    font-size: 24px;
-    margin-bottom: 6px;
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 160px;
+    user-select: none;
   }
 
   &__range {
@@ -20,21 +24,34 @@
 
   &__rangeInput {
     width: 100%;
+    background-image: linear-gradient(90deg, #30DEAB, #02572d);
+    height: 18px;
+    border-radius: 4px;
+    -webkit-appearance: none;
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 12px;
+      height: 40px;
+      border-radius: 4px;
+      background-color: #202020;
+    }
   }
 
   &__rangeMin,
   &__rangeMax {
     position: absolute;
-    font-size: 16px;
-    top: 25px;
+    font-size: 18px;
+    top: 26px;
+    user-select: none;
   }
 
   &__rangeMin {
-    left: 0;
+    left: 0px;
   }
 
   &__rangeMax {
-    right: 0;
+    right: 0px;
   }
 
   &__rangeInput {
