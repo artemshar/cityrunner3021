@@ -213,13 +213,13 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   height: 25px;
   bottom: 30px;
   left: 50%;
-  background: $stick-color;
+  background: #000000;
   border-radius: 3px;
   animation: stick 3s ease-in-out infinite;
   transform: translateX(0px) rotate(0.02turn);
 
   div {
-    background: $stick-color;
+    background: #000000;
     transform-origin: 50% 0%;
 
     .left {
@@ -234,7 +234,8 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   .head {
     width: 12px;
     height: 12px;
-    background: $stick-color;
+    background: #e7e7e7;
+    border: 1px solid #000000;
     border-radius: 50%;
     transform: translate(-3px, -14px);
   }
