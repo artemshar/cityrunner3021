@@ -15,6 +15,19 @@ export default function Runner({ bpm }) {
     updateCadenceStyle();
   }, [bpm]);
 
+  const displayAd = (
+
+      <div className={cn(styles.ad, styles.ad__one)}>
+        <a className={cn(styles.adWrap)} href={'https://www.instagram.com/cityrunner3021/'} target={'_blank'}>
+          <div>
+            Our sponsor. Maybe you?
+          </div>
+          <div>
+            <a className={cn(styles.ad__linkContact)}>Contact</a>
+          </div>
+        </a>
+      </div>
+  )
 
   const displayBack = (
     <>
@@ -71,9 +84,10 @@ export default function Runner({ bpm }) {
 
   return (
     <section className={styles.world}>
-      {displayBack}
+      {/* {displayBack} */}
       {displayFloor}
       {displayCloud}
+      {displayAd}
       {displayMan}
     </section>
   )

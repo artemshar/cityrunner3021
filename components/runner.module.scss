@@ -20,14 +20,12 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   justify-content: center;
   width: 100%;
   margin: 0 auto;
-  height: 200px;
-  top: 50%;
+  height: 260px;
+  top: 30%;
   overflow: hidden;
-  box-shadow: 0px -4px 10px 10px #68AADC;
-  background-color: #68AADC;
+  background-color: #ffffff;
   
   div {
-    position: absolute;
     box-sizing: border-box;
     
     border-radius: 2px;
@@ -41,13 +39,75 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   }
 }
 
+
+.ad {
+  position: absolute;
+  display: flex;
+
+  bottom: 80px;
+  right: -240px;
+  
+  width: 240px;
+  height: 120px;
+
+  background-color: rgb(249, 249, 249);
+  text-align: center;
+
+  
+  .adWrap {
+    padding: 10px 5px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    width: 100%;
+    height: 100%;
+    transition: .3s;
+  
+    &:hover {
+      box-shadow: rgba(8, 169, 232, 0.603) 0px 50px 100px -20px, rgba(237, 0, 186, 0.8) 0px 30px 60px -30px;
+      border: 2px dotted rgba(237, 0, 186, 0.8);
+      
+      .ad__linkContact {
+        color:rgb(0, 200, 255);
+      }
+    }
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    top: 100%;
+    left: calc(50% - 5px);
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    background-color: rgb(255, 255, 255);
+  }
+
+  &__linkContact {
+    display: inline-block;
+    color:rgb(0, 36, 155);
+    margin-top: 10px;
+  }
+
+  &__one {
+    animation: ad 120s linear infinite 1s;
+    font-size: 18px;
+  }
+}
+
 // Back
 .back {
-  bottom: 0;
+  bottom: 40px;
   right: -200px;
-  background: rgb(34,193,195);
-  background: linear-gradient(5deg, rgba(34,193,195,0.8) 0%, rgba(253,187,45,0.6) 100%);
-  
+  background: rgb(79, 79, 79);
+  background: linear-gradient(5deg, rgba(83, 83, 83, 0.8) 0%, rgba(255, 255, 255, 0.6) 100%);
+  position: absolute;
+
+  div {
+    position: absolute;
+  }
+
   &.one {
     width: 70px;
     height: 55%;
@@ -78,11 +138,16 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   width: 100%;
   height: 4px;
   bottom: 0;
+  position: absolute;
+
+  div {
+    position: absolute;
+  }
 
   .rock {
     bottom: 0;
     right: -20px;
-    background: #0c8f1b;
+    background: #3d3d3d;
 
     &.one {
       width: 1px;
@@ -107,21 +172,26 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
     width: 2px;
     bottom: 0;
     right: -2px;
-    background: #07a41a;
+    background: #535353;
+    position: absolute;
+
+    div {
+      position: absolute;
+    }
 
     &.one {
       height: 15px;
-      animation: elem 12s linear infinite;
+      animation: elem 22s linear infinite;
     }
 
     &.two {
       height: 10px;
-      animation: elem 13.2s linear infinite 0.4s;
+      animation: elem 23.2s linear infinite 0.4s;
     }
 
     &.three {
       height: 18px;
-      animation: elem 10s linear infinite 0.8s;
+      animation: elem 20s linear infinite 0.8s;
     }
 
     &.four {
@@ -167,10 +237,15 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   right: -160px;
   background: rgba(246, 245, 255, 0.9);
   border-radius: 15px;
+  position: absolute;
+
+  div {
+    position: absolute;
+  }
 
   &::before,
   &::after {
-    background: rgba(159, 205, 255, 0.7);
+    background: rgba(234, 234, 234, 0.7);
   }
 
   &::before {
@@ -190,36 +265,47 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   &.one {
     width: 100px;
     top: 60px;
-    animation: cloud 28s linear infinite;
+    animation: cloud 128s linear infinite;
   }
 
   &.two {
     width: 80px;
     top: 20px;
-    animation: cloud 15.6s linear infinite 4s;
+    animation: cloud 115.6s linear infinite 80s;
   }
 
   &.three {
     width: 40px;
     top: 10px;
-    animation: cloud 19.2s linear infinite 10s;
+    animation: cloud 119.2s linear infinite 90s;
   }
 }
 
 
 // Stickman
 .man {
-  width: 6px;
-  height: 25px;
-  bottom: 30px;
+  width: 5px;
+  height: 29px;
+  bottom: 40px;
   left: 50%;
-  background: #000000;
-  border-radius: 3px;
+  
   animation: stick 3s ease-in-out infinite;
   transform: translateX(0px) rotate(0.02turn);
+  position: absolute;
+
+  &:after {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: #2f2f2f;
+    border-radius: 2px;
+  }
 
   div {
-    background: #000000;
+    position: absolute;
+    background: #2f2f2f;
     transform-origin: 50% 0%;
 
     .left {
@@ -232,37 +318,81 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
   }
 
   .head {
-    width: 12px;
-    height: 12px;
-    background: #e7e7e7;
-    border: 1px solid #000000;
+    width: 22px;
+    height: 22px;
+    left: -5px;
+    top: -12px;
+    background: #fff;
+    border: 1px solid #2f2f2f;
     border-radius: 50%;
     transform: translate(-3px, -14px);
+    
+    &::after {
+      content: '. .';
+      left: 9px;
+      top: -2px;
+      font-size: 10px;
+      font-weight: bold;
+      color:rgb(0, 0, 0);
+      transform: rotate(-10deg);
+    }
   }
 
   .arm {
     width: 4px;
-    height: 14px;
+    height: 16px;
     top: 1px;
     left: 1px;
 
+    
     .bottom {
       width: 4px;
-      height: 12px;
-      bottom: -10px;
+      height: 14px;
+      bottom: -13px;
+      left: -2px;
+      background-color: #ffffff;
+      border: 1px solid #000;
+    }
+
+    &.left {
+      z-index: -1;
+      .bottom { 
+        background-color: #e3f1f1;
+      }
+    }
+
+    &.right {
+      z-index: 3;
+      .bottom { 
+        background-color: #e3f1f1;
+      }
     }
   }
 
   .leg {
     width: 4px;
-    height: 20px;
-    bottom: -19px;
+    height: 22px;
+    bottom: -20px;
     left: 1px;
 
     .bottom {
       width: 4px;
-      height: 15px;
-      bottom: -13px;
+      height: 17px;
+      bottom: -15px;
+      // background-color: #ffffff;
+      border: 1px solid #000;
+    }
+
+    &.left {
+      .bottom { 
+        background-color: #e3f1f1;
+      }
+    }
+
+    &.right {
+      .bottom { 
+        background-color: #e5e5e5;
+      }
     }
   }
 
@@ -273,7 +403,7 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
       animation: run $manspeed_1 linear infinite;
   
       .bottom {
-        animation: arm-bottom $manspeed_2 linear infinite
+        animation: arm-bottom $manspeed_2 linear infinite;
       }
     }
 
@@ -311,10 +441,18 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
     transform: translateX(0);
   }
   100% {
-    transform: translateX(calc(-110vw - 200%));
+    transform: translateX(calc(-110vw - 100%));
   }
 }
 
+@keyframes ad {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-130vw - 200%));
+  }
+}
 
 @keyframes elem {
   0% {
@@ -354,7 +492,7 @@ $manspeed_2: calc(#{$manspeed_1} / 2);
 
 @keyframes arm-bottom {
   0%, 100% {
-    transform: rotate(-50deg);
+    transform: rotate(-60deg);
   } 
   50% {
     transform: rotate(-120deg);

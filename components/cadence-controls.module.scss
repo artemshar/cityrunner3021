@@ -4,16 +4,16 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  height: 400px;
+  // height: 400px;
   width: 200px;
-  margin: -170px auto;
+  margin: 20px auto;
   z-index: 10;
   position: relative;
 
   &__value {
     font-size: 30px;
     font-weight: 800;
-    margin-bottom: 160px;
+    margin-bottom: 60px;
     user-select: none;
   }
 

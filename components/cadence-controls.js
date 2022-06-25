@@ -10,7 +10,7 @@ export default function CadenceControls({ cadence, updateCadence }) {
       <div className={styles.cadenceControls__range}>
         <span className={styles.cadenceControls__rangeMin}>{minRangeValue}</span>
         <span className={styles.cadenceControls__rangeMax}>{maxRangeValue}</span>
-        <input onChange={(e) => updateCadence(e.target.value)} className={styles.cadenceControls__rangeInput} type="range" id="bpm" name="bpm" min={minRangeValue} max={maxRangeValue} />
+        <input value={cadence} onChange={(e) => updateCadence(e.target.value)} className={styles.cadenceControls__rangeInput} type="range" id="bpm" name="bpm" min={minRangeValue} max={maxRangeValue} />
       </div>
     </div>
   )
